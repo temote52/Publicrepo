@@ -1,8 +1,10 @@
-import re
-from playwright.sync_api import Playwright, sync_playwright, expect
+    const { firefox } = require('playwright');
 
-with sync_playwright() as playwright:
-    browser = playwright.firefox.launch(headless=False)
-    context = browser.new_context()
-    page = context.new_page()
-    page.goto("https://admin.zscalerthree.net/")
+    (async () => {
+        const browser = await firefox.launch({ headless: false });
+        const context = await browser.newContext();
+        const page = await context.newPage();
+        await page.goto('https://admin.zscalerthree.net/');
+
+        // $SELECTION_PLACEHOLDER$
+    })();
